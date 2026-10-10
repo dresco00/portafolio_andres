@@ -10,13 +10,13 @@
 // ============================================================
 const CONTACT = {
   // Código de país + número, solo dígitos, sin "+" ni espacios. Ej. Colombia: "573001234567"
-  whatsapp: "WHATSAPP_NUMBER_AQUI",
+  whatsapp: "573043388348",
 
   // Tu correo. Ej: "andres@correo.com"
-  email: "CORREO_AQUI",
+  email: "andrescordero0409@gmail.com",
 
   // Enlace completo a tu perfil. Ej: "https://github.com/tu-usuario"
-  github: "GITHUB_AQUI",
+  github: "https://github.com/dresco00/portafolio_andres",
 };
 
 // Mensaje que aparece escrito al abrir WhatsApp
