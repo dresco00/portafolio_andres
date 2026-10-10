@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabor Caribe | Restaurante de comida caribeña (demo)</title>
+  <meta name="description" content="Sabor Caribe: sitio de demostración para un restaurante de comida caribeña. Carta con filtros, galería, horarios y reservas por WhatsApp.">
+  <meta name="theme-color" content="#fffaf3">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="demo-bar">
+    <p>✨ Proyecto de demostración · El restaurante, los precios y los datos son inventados.</p>
+    <a href="../../portafolio/index.html">Volver al portafolio</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio">
+        <span class="logo-dot"></span>
+        <span>Sabor Caribe</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="badge">Cocina de costa y mar</span>
+          <h1>Mar, coco y <em>fuego lento.</em></h1>
+          <p class="hero-lead">Mariscos del día, patacones crocantes y jugos de fruta fresca. Comida para poner al centro de la mesa y disfrutar sin afán.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">Ver la carta</a>
+            <a class="btn btn-outline" href="#contacto">Reservar mesa</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-img">
+            <img src="assets/arroz-mariscos.svg" width="800" height="600" alt="Plato de arroz de mariscos">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="section about" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="section-tag">Nuestra esencia</span>
+          <h2>Sabor auténtico, <em>fresco y costero.</em></h2>
+          <p>Sabor Caribe es un proyecto de demostración que simula la experiencia real de un restaurante costero: carta interactiva con filtros, galería de ambiente, horarios y conexión directa para reservas.</p>
+          <p>Disfruta de una propuesta inspirada en los sabores del mar, con ingredientes frescos y recetas tradicionales llevadas al punto perfecto.</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/galeria-terraza.svg" width="800" height="600" loading="lazy" alt="Terraza del restaurante">
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Nuestra carta</span>
+            <h2>Especialidades de la casa</h2>
+          </div>
+          <p>Precios de demostración</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtros del menú">
+          <button class="filter-btn is-active" type="button" data-filter="todos">Todos</button>
+          <button class="filter-btn" type="button" data-filter="entradas">Entradas</button>
+          <button class="filter-btn" type="button" data-filter="platos">Platos fuertes</button>
+          <button class="filter-btn" type="button" data-filter="bebidas">Bebidas</button>
+        </div>
+        <p class="menu-count" id="menu-count" aria-live="polite"></p>
+
+        <div class="menu-grid" id="menu-grid">
+          <article class="dish-card" data-category="platos">
+            <img src="assets/arroz-mariscos.svg" width="800" height="600" loading="lazy" alt="Arroz de mariscos">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Arroz de mariscos</h3>
+                <span class="price">$48.000</span>
+              </div>
+              <p>Arroz meloso con camarones, mejillones y calamar, sofrito criollo y cilantro fresco.</p>
+              <span class="dish-tag">Plato fuerte</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-category="platos">
+            <img src="assets/pargo-frito.svg" width="800" height="600" loading="lazy" alt="Pargo frito">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Pargo frito</h3>
+                <span class="price">$52.000</span>
+              </div>
+              <p>Pargo entero crujiente acompañado de patacón, ensalada fresca y limón.</p>
+              <span class="dish-tag">Plato fuerte</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-category="entradas">
+            <img src="assets/camarones-ajillo.svg" width="800" height="600" loading="lazy" alt="Camarones al ajillo">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Camarones al ajillo</h3>
+                <span class="price">$42.000</span>
+              </div>
+              <p>Camarones salteados en aceite de oliva, ajo confitado, toque de ají y perejil.</p>
+              <span class="dish-tag">Entrada</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-category="entradas">
+            <img src="assets/patacones.svg" width="800" height="600" loading="lazy" alt="Patacones">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Patacones</h3>
+                <span class="price">$16.000</span>
+              </div>
+              <p>Plátano verde doblemente frito, acompañado de hogao casero y queso costeño.</p>
+              <span class="dish-tag">Entrada</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-category="platos">
+            <img src="assets/cazuela-mariscos.svg" width="800" height="600" loading="lazy" alt="Cazuela de mariscos">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Cazuela de mariscos</h3>
+                <span class="price">$54.000</span>
+              </div>
+              <p>Caldo cremoso de coco con selección del mar, acompañado de patacón y arroz.</p>
+              <span class="dish-tag">Plato fuerte</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-category="bebidas">
+            <img src="assets/limonada-coco.svg" width="800" height="600" loading="lazy" alt="Limonada de coco">
+            <div class="dish-body">
+              <div class="dish-top">
+                <h3>Limonada de coco</h3>
+                <span class="price">$12.000</span>
+              </div>
+              <p>Clásica limonada frappé con crema de coco natural y borde de coco tostado.</p>
+              <span class="dish-tag">Bebida</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Ambiente</span>
+            <h2>Galería del local</h2>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <figure><img src="assets/galeria-mesa.svg" width="800" height="600" loading="lazy" alt="Mesa servida"><figcaption>La mesa</figcaption></figure>
+          <figure><img src="assets/galeria-luces.svg" width="800" height="600" loading="lazy" alt="Luces nocturnas"><figcaption>Noches en la terraza</figcaption></figure>
+          <figure><img src="assets/galeria-mar.svg" width="800" height="600" loading="lazy" alt="Olas del mar"><figcaption>Frente al mar</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / RESERVAS -->
+    <section class="section contact" id="contacto">
+      <div class="container contact-inner">
+        <span class="section-tag">Reservas</span>
+        <h2>¿Quieres asegurar <em>tu mesa hoy?</em></h2>
+        <p>Escríbenos directamente por WhatsApp indicando el número de personas, hora y fecha.</p>
+        <a class="btn btn-primary btn-whatsapp" id="whatsapp-btn" href="#contacto" target="_blank" rel="noopener">
+          Reservar por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Sabor Caribe</p>
+      <ul class="footer-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <p class="footer-small">© 2026 Sabor Caribe · Creado por Andrés Cordero</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniela Photography | Portafolio de fotografía (demo)</title>
+  <meta name="description" content="Daniela Photography: sitio de demostración para una fotógrafa ficticia. Galería con filtros por categoría, visor de imágenes, servicios y formulario de contacto.">
+  <meta name="theme-color" content="#f5f5f3">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías de Google Fonts (si no cargan, el navegador usa una fuente de respaldo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aviso: deja claro que es un proyecto de demostración -->
+  <div class="demo-bar">
+    <p>Proyecto de demostración · La fotógrafa es ficticia y las imágenes son ilustraciones de ejemplo.</p>
+    <a href="../../portafolio/index.html">Volver al portafolio</a>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#inicio">Daniela Photography</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <h1>
+          <span class="hero-name">Daniela</span>
+          <span class="hero-role">Photography</span>
+        </h1>
+        <p class="hero-phrase">Retratos, eventos y paisajes con luz natural.</p>
+        <a class="btn" href="#portafolio">Ver portafolio</a>
+      </div>
+
+      <div class="hero-images">
+        <figure class="hero-main">
+          <img src="assets/retrato-ventana.svg" width="800" height="1000" alt="Retrato de una mujer junto a una ventana, con luz suave y cálida">
+        </figure>
+        <figure class="hero-second">
+          <img src="assets/paisaje-montanas.svg" width="1200" height="800" alt="Montañas azuladas entre la niebla bajo un sol pálido">
+        </figure>
+        <p class="hero-caption">Imágenes de demostración</p>
+      </div>
+    </section>
+
+    <!-- ============ PORTAFOLIO ============ -->
+    <section class="section" id="portafolio">
+      <div class="section-head">
+        <h2>Portafolio</h2>
+
+        <!-- Filtros: cada botón usa data-filter con el nombre de la categoría -->
+        <div class="filters" role="group" aria-label="Filtrar fotografías por categoría">
+          <button class="filter-btn is-active" type="button" data-filter="todo" aria-pressed="true">Todo</button>
+          <button class="filter-btn" type="button" data-filter="retratos" aria-pressed="false">Retratos</button>
+          <button class="filter-btn" type="button" data-filter="eventos" aria-pressed="false">Eventos</button>
+          <button class="filter-btn" type="button" data-filter="paisajes" aria-pressed="false">Paisajes</button>
+          <button class="filter-btn" type="button" data-filter="urbana" aria-pressed="false">Fotografía urbana</button>
+        </div>
+      </div>
+
+      <!--
+        PARA AGREGAR UNA FOTO: copia un bloque <figure class="photo"> completo, pégalo en la lista y cambia:
+        data-category (retratos, eventos, paisajes o urbana), data-label (nombre visible de la categoría),
+        data-title (título), la ruta de la imagen, width/height y el texto alt.
+      -->
+      <div class="gallery" id="gallery">
+
+        <figure class="photo" data-category="retratos" data-label="Retratos" data-title="Luz de ventana">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Luz de ventana">
+            <img src="assets/retrato-ventana.svg" width="800" height="1000" loading="lazy" alt="Retrato de una mujer junto a una ventana, con luz suave y cálida">
+            <span class="photo-caption"><span>Luz de ventana</span><span>Retratos</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="paisajes" data-label="Paisajes" data-title="Montañas en la niebla">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Montañas en la niebla">
+            <img src="assets/paisaje-montanas.svg" width="1200" height="800" loading="lazy" alt="Montañas azuladas entre la niebla bajo un sol pálido">
+            <span class="photo-caption"><span>Montañas en la niebla</span><span>Paisajes</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="eventos" data-label="Eventos" data-title="Bajo el arco">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Bajo el arco">
+            <img src="assets/evento-boda.svg" width="1200" height="800" loading="lazy" alt="Una pareja de novios bajo un arco con flores y luces al atardecer">
+            <span class="photo-caption"><span>Bajo el arco</span><span>Eventos</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="urbana" data-label="Fotografía urbana" data-title="Hora azul">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Hora azul">
+            <img src="assets/urbana-torres.svg" width="800" height="1000" loading="lazy" alt="Rascacielos con ventanas encendidas durante el atardecer">
+            <span class="photo-caption"><span>Hora azul</span><span>Fotografía urbana</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="retratos" data-label="Retratos" data-title="Hora dorada">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Hora dorada">
+            <img src="assets/retrato-dorado.svg" width="800" height="1000" loading="lazy" alt="Retrato al aire libre con luces doradas desenfocadas al fondo">
+            <span class="photo-caption"><span>Hora dorada</span><span>Retratos</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="paisajes" data-label="Paisajes" data-title="Marea baja">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Marea baja">
+            <img src="assets/paisaje-costa.svg" width="1200" height="800" loading="lazy" alt="Mar en calma al atardecer con rocas oscuras en primer plano">
+            <span class="photo-caption"><span>Marea baja</span><span>Paisajes</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="urbana" data-label="Fotografía urbana" data-title="Calle de noche">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Calle de noche">
+            <img src="assets/urbana-calle.svg" width="1200" height="800" loading="lazy" alt="Calle de noche en perspectiva con farolas de colores">
+            <span class="photo-caption"><span>Calle de noche</span><span>Fotografía urbana</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="eventos" data-label="Eventos" data-title="Brindis">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Brindis">
+            <img src="assets/evento-brindis.svg" width="1200" height="800" loading="lazy" alt="Dos copas chocando en un brindis con luces desenfocadas al fondo">
+            <span class="photo-caption"><span>Brindis</span><span>Eventos</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="retratos" data-label="Retratos" data-title="Contraste">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Contraste">
+            <img src="assets/retrato-contraste.svg" width="800" height="1000" loading="lazy" alt="Retrato en blanco y negro con luz lateral y mucho contraste">
+            <span class="photo-caption"><span>Contraste</span><span>Retratos</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="paisajes" data-label="Paisajes" data-title="Dunas al atardecer">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Dunas al atardecer">
+            <img src="assets/paisaje-dunas.svg" width="1200" height="800" loading="lazy" alt="Dunas de arena naranja con una figura diminuta bajo un cielo violeta">
+            <span class="photo-caption"><span>Dunas al atardecer</span><span>Paisajes</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="urbana" data-label="Fotografía urbana" data-title="Escaleras">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Escaleras">
+            <img src="assets/urbana-escaleras.svg" width="800" height="800" loading="lazy" alt="Escaleras geométricas en tonos turquesa con una persona de pie">
+            <span class="photo-caption"><span>Escaleras</span><span>Fotografía urbana</span></span>
+          </button>
+        </figure>
+
+        <figure class="photo" data-category="eventos" data-label="Eventos" data-title="Celebración">
+          <button class="photo-btn" type="button" aria-label="Ampliar fotografía: Celebración">
+            <img src="assets/evento-fiesta.svg" width="1200" height="800" loading="lazy" alt="Siluetas de personas celebrando bajo luces y confeti">
+            <span class="photo-caption"><span>Celebración</span><span>Eventos</span></span>
+          </button>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section" id="servicios">
+      <div class="section-head">
+        <h2>Servicios</h2>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <h3>Sesiones personales</h3>
+          <p>Retratos de una persona o de pareja, con luz natural. Sin prisa, para que no sientas que estás posando.</p>
+        </article>
+        <article class="service">
+          <h3>Fotografía de eventos</h3>
+          <p>Cumpleaños, bodas, reuniones de familia. La cámara se mueve sin estorbar y se queda con lo que pasa, no con lo que se arma para la foto.</p>
+        </article>
+        <article class="service">
+          <h3>Fotografía para marcas</h3>
+          <p>Fotos de producto y del equipo para la web y las redes de un negocio pequeño.</p>
+        </article>
+        <article class="service">
+          <h3>Sesiones exteriores</h3>
+          <p>Parque, playa o calle. El lugar y la hora se eligen según de dónde venga la luz.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section about" id="sobre-mi">
+      <figure class="about-image">
+        <img src="assets/retrato-dorado.svg" width="800" height="1000" loading="lazy" alt="Retrato ilustrado de una mujer con luces doradas desenfocadas al fondo">
+      </figure>
+
+      <div class="about-text">
+        <h2>Sobre mí</h2>
+        <p>Daniela es un personaje inventado para este proyecto. Imagínala con una cámara prestada, sus primeras fotos hechas en el balcón de su casa y una manía: no usa flash si hay una ventana cerca.</p>
+        <p>Conversa un rato antes de sacar la cámara. Después entrega pocas fotos, elegidas una por una.</p>
+        <p class="demo-note">Contenido de demostración: la persona y su historia son ficticias.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contact" id="contacto">
+      <div class="contact-intro">
+        <h2>Escríbeme</h2>
+        <p>Cuéntame qué necesitas: una sesión, un evento o fotos para tu negocio.</p>
+      </div>
+
+      <!-- novalidate: la validación la hace script.js para mostrar mensajes propios -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error">
+          <span class="field-error" id="name-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+          <span class="field-error" id="email-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" aria-describedby="message-error"></textarea>
+          <span class="field-error" id="message-error"></span>
+        </div>
+
+        <button class="btn" type="submit">Enviar mensaje</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <p>Daniela Photography · Sitio de demostración</p>
+    <p>© <span id="year">2026</span> · Creado por Andrés Cordero</p>
+  </footer>
+
+  <!-- ============ VISOR DE IMÁGENES (modal) ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Visor de fotografías">
+    <button class="lb-btn lb-close" type="button" aria-label="Cerrar visor">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Fotografía anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4L7 12l8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <figure class="lb-figure" id="lb-figure">
+      <img id="lb-image" alt="">
+      <figcaption><span id="lb-title"></span><span id="lb-count"></span></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" type="button" aria-label="Fotografía siguiente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

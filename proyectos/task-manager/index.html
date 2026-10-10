@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager | Aplicación de tareas en JavaScript (demo)</title>
+  <meta name="description" content="Task Manager: aplicación web de demostración para crear, editar, completar, filtrar y eliminar tareas. Guarda los datos en el navegador con LocalStorage.">
+  <meta name="theme-color" content="#1b2430">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo-bar">
+    <p>Proyecto de demostración · Tus tareas se guardan solo en este navegador.</p>
+    <a href="../../portafolio/index.html">Volver al portafolio</a>
+  </div>
+
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#2457f5"/>
+          <path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1>Task Manager</h1>
+      </div>
+      <p class="header-text">Organiza lo que tienes pendiente.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Resumen -->
+    <section class="summary" aria-label="Resumen de tareas">
+      <div class="stat"><span class="stat-label">Total</span><strong id="stat-total">0</strong></div>
+      <div class="stat"><span class="stat-label">Pendientes</span><strong id="stat-pending">0</strong></div>
+      <div class="stat"><span class="stat-label">Completadas</span><strong id="stat-done">0</strong></div>
+    </section>
+
+    <div class="layout">
+
+      <!-- Formulario (sirve para crear y para editar) -->
+      <section class="card form-card" aria-labelledby="form-title">
+        <h2 id="form-title">Nueva tarea</h2>
+
+        <form id="task-form" novalidate>
+          <div class="field">
+            <label for="task-title">Título</label>
+            <input type="text" id="task-title" maxlength="80" placeholder="Ej: Terminar el informe" aria-describedby="title-error">
+            <p class="field-error" id="title-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="task-description">Descripción <span class="optional">(opcional)</span></label>
+            <textarea id="task-description" rows="3" maxlength="300" placeholder="Detalles de la tarea"></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="task-date">Fecha <span class="optional">(opcional)</span></label>
+              <input type="date" id="task-date">
+            </div>
+            <div class="field">
+              <label for="task-priority">Prioridad</label>
+              <select id="task-priority">
+                <option value="baja">Baja</option>
+                <option value="media" selected>Media</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submit-btn">Agregar tarea</button>
+            <button type="button" class="btn btn-ghost" id="cancel-btn" hidden>Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Lista -->
+      <section class="card list-card" aria-labelledby="list-title">
+        <div class="list-head">
+          <h2 id="list-title">Mis tareas</h2>
+          <div class="list-actions">
+            <button type="button" class="btn btn-ghost btn-small" id="clear-completed" hidden>Limpiar completadas</button>
+            <p class="counter" id="counter" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar tareas">
+          <button type="button" class="filter-btn is-active" data-filter="todas" aria-pressed="true">Todas</button>
+          <button type="button" class="filter-btn" data-filter="pendientes" aria-pressed="false">Pendientes</button>
+          <button type="button" class="filter-btn" data-filter="completadas" aria-pressed="false">Completadas</button>
+        </div>
+
+        <ul class="task-list" id="task-list"></ul>
+        <p class="empty" id="empty-message" hidden></p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>Task Manager · Proyecto de demostración creado por Andrés Cordero · <span id="year">2026</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

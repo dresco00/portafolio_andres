@@ -1,0 +1,6 @@
+<!-- FAVICON PLACEHOLDER: reemplaza este archivo por tu propio ícono cuando lo tengas -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0E1726"/>
+  <path d="M8 23l5.2-14h1.6L20 23M10 18.5h8" fill="none" stroke="#FF6B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="22" y="21" width="3" height="3" fill="#F1F2F4"/>
+</svg>
